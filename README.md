@@ -1,68 +1,49 @@
-# Wisebase AI Server 🤖
-AI processing service developed for the Wisebase SaaS platform.
+# Wisebase AI Server
 
-This repository contains the Python FastAPI service responsible for AI-powered analysis workflows, including image, audio, and video processing.
+Python and FastAPI service that analyses image, audio and video from the Wisebase scan flow. Wisebase is a multi-role workforce management platform that I built at DataC and keep improving.
 
-It is integrated with the Angular web application and Flutter mobile application through REST APIs.
----
+**Product page:** https://conntinuity.datac.com/
 
-## My Role
+This is the first-generation AI service. A newer service lives in [WiseBase_ai_v2](https://github.com/mnashat18/WiseBase_ai_v2).
 
-Designed and developed this AI service as part of the complete Wisebase platform.
+## What it does
 
-Responsibilities:
+- Receives scan media from the Wisebase apps through REST APIs
+- Validates and scores image, audio and video input
+- Runs machine learning inference and returns results to the platform
+- Sends results back to the Directus backend (`directus_client.py`)
 
-- Built the FastAPI backend service
-- Developed AI processing workflows
-- Integrated image, audio, and video analysis pipelines
-- Connected AI results with the main platform through REST APIs
-- Configured production deployment
+## Tech stack
 
----
+Python, FastAPI, PyTorch, OpenCV, MediaPipe, Whisper, Librosa, Docker.
 
-## Tech Stack:
+## How it fits together
 
-- Python
-- FastAPI
-- PyTorch
-- OpenCV
-- MediaPipe
-- Whisper
-- Librosa
-- REST APIs
-- Docker
----
-
-## Architecture:
 ```text
-Flutter Mobile Application
-            |
-            |
-Angular Frontend
-            |
-            |
-Directus Backend
-            |
-            |
-Wisebase AI Server
-            |
-            |
-AI Models
+Flutter app / Angular web app  ->  Directus backend  ->  AI server  ->  models
 ```
 
----
+## Repository layout
 
-## Features
+| Path | Contents |
+| --- | --- |
+| `main.py` | FastAPI entry point |
+| `analysis_runtime.py`, `analysis_worker.py` | Analysis pipeline and worker |
+| `audio.py`, `video.py`, `vision.py` | Media processing |
+| `validation.py`, `quality.py`, `scoring.py`, `baseline.py` | Validation and scoring |
+| `ml/` | Model code |
+| `sql/` | SQL scripts |
+| `tests/` and `test_*.py` | Tests |
+| `Dockerfile` | Container build |
 
-- Image, audio, and video processing workflows
-- AI-based media validation
-- Machine learning model inference
-- REST API communication
-- Production-ready FastAPI service
-- Integration with frontend and mobile applications
+## Run locally
 
+```bash
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
 
+## Author
 
-
-
-  
+Mohamed Nashat Ghonim, Full-Stack Developer
+[LinkedIn](https://www.linkedin.com/in/mohamed-nashat-ghonim/) · [GitHub](https://github.com/mnashat18) · mnashat2508@gmail.com

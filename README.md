@@ -1,5 +1,5 @@
-# Wellar AI Server 🤖
-AI processing service developed for the Wellar AI SaaS platform.
+# Wisebase AI Server 🤖
+AI processing service developed for the Wisebase SaaS platform.
 
 This repository contains the Python FastAPI service responsible for AI-powered analysis workflows, including image, audio, and video processing.
 
@@ -8,7 +8,7 @@ It is integrated with the Angular web application and Flutter mobile application
 
 ## My Role
 
-Designed and developed this AI service as part of the complete Wellar AI platform.
+Designed and developed this AI service as part of the complete Wisebase platform.
 
 Responsibilities:
 
@@ -44,7 +44,7 @@ Angular Frontend
 Directus Backend
             |
             |
-Wellar AI Server
+Wisebase AI Server
             |
             |
 AI Models
